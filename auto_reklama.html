@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avtomobil sotish e’loni</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #0b1220cc;
+      --text: #e5e7eb;
+      --muted: #cbd5e1;
+      --accent: #22d3ee;
+      --ring: #38bdf8;
+      --good: #10b981;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 800px at 50% -10%, #1f2937 0%, var(--bg) 55%);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(900px, 95vw);
+      background: linear-gradient(180deg, rgba(16,24,40,.75), var(--card));
+      border: 1px solid rgba(148,163,184,.2);
+      border-radius: 24px;
+      padding: clamp(20px, 4vw, 36px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      backdrop-filter: blur(6px);
+    }
+
+    .title {
+      margin: 0 0 14px 0;
+      font-size: clamp(22px, 3.4vw, 34px);
+      text-align: center;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--accent), #60a5fa 60%, #a78bfa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      margin: 0 0 24px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: clamp(14px, 1.6vw, 16px);
+    }
+
+    ol {
+      counter-reset: item;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    li {
+      position: relative;
+      background: rgba(2,6,23,.5);
+      border: 1px solid rgba(148,163,184,.18);
+      border-radius: 16px;
+      padding: 14px 16px 14px 54px;
+      line-height: 1.5;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+
+    li::before {
+      counter-increment: item;
+      content: counter(item);
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #60a5fa);
+      color: #0b1220;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 6px 16px rgba(34,211,238,.35);
+    }
+
+    li:hover {
+      transform: translateY(-1px);
+      background: rgba(2,6,23,.65);
+      border-color: rgba(148,163,184,.3);
+    }
+
+    .note {
+      margin-top: 18px;
+      border: 1px dashed rgba(56,189,248,.6);
+      border-radius: 16px;
+      padding: 14px 16px;
+      background: rgba(2,132,199,.08);
+      display: flex;
+      align-items: start;
+      gap: 10px;
+    }
+    .note .dot {
+      flex: 0 0 10px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--good);
+      margin-top: 6px;
+      box-shadow: 0 0 0 4px rgba(16,185,129,.2);
+    }
+    .note b { color: #e2f7f2; }
+
+    .footer {
+      margin-top: 12px;
+      text-align: center;
+      color: #93c5fd;
+      font-size: 13px;
+    }
+
+    .contact-text {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 16px 28px;
+      background: linear-gradient(90deg, #0088cc, #00bfff);
+      color: white;
+      font-weight: 700;
+      border-radius: 50px;
+      font-size: 20px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0,136,204,0.5);
+    }
+    .contact-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,136,204,0.6);
+    }
+    .contact-link i {
+      font-size: 22px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <h1 id="title" class="title">Avtomobil sotish bo‘yicha ma’lumotlar</h1>
+    <p class="subtitle">Iltimos, quyidagi bandlarni to‘ldirib yuboring:</p>
+
+    <ol>
+      <li>Avtomobil markasi va modeli (masalan: Chevrolet Cobalt, Toyota Camry va hokazo)</li>
+      <li>Ishlab chiqarilgan yili</li>
+      <li>Dvigatel hajmi (litrda) va yonilg‘i turi (benzin, dizel, gaz, gibrid)</li>
+      <li>Probeg (yurgan masofasi, km)</li>
+      <li>Rang va bo‘yoq holati (original bo‘yoqmi yoki bo‘yalgani bormi)</li>
+      <li>Texnik holati (dvigatel, transmissiya, tormoz tizimi, suspenziya)</li>
+      <li>Salon holati (terilar, o‘rindiqlar, multimedia, konditsioner)</li>
+      <li>Qo‘shimcha opsiyalar (parktronik, kamera, navigatsiya, qizdiriladigan o‘rindiqlar va boshqalar)</li>
+      <li>Yoqilg‘i sarfi (shahar va trassa bo‘yicha)</li>
+      <li>Nechanchi qo‘l ekanligi (1-chi, 2-chi va hokazo)</li>
+      <li>Hujjatlar holati (pasport, tex pasport, sug‘urta)</li>
+      <li>Avtomobilning barcha tomondan olingan aniq va sifatli rasmlari (old, orqa, yon, salon, dvigatel bo‘limi)</li>
+    </ol>
+
+    <div class="note" aria-live="polite">
+      <span class="dot" aria-hidden="true"></span>
+      <div>
+        📌 <b>Oxirida avtomobilingizning aniq narxini yozing.</b>
+      </div>
+    </div>
+
+    <p class="footer">Ma’lumotlarni to‘liq yuborsangiz, mashinangiz tezroq sotiladi.</p>
+
+    <p class="contact-text">Barcha ushbu ma’lumotlarni quyidagi Telegram manziliga yuboring:</p>
+    <div style="text-align:center;">
+      <a href="https://t.me/abrorxon_jigar" class="contact-link"><i class="fa fa-telegram"></i> abrorxon_jigar</a>
+    </div>
+  </main>
+</body>
+</html>

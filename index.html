@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inomarka.hayda</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap">
+    <script src="https://kit.fontawesome.com/455bb90822.js" crossorigin="anonymous"></script>
+    <style>
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: url('back.png') no-repeat center top fixed;
+    background-size: cover;
+    color: #dfe8ff;
+    text-align: center;
+    position: relative;
+}
+
+/* Размытие и сине-чёрный фильтр */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('back.png') no-repeat center top fixed;
+    background-size: cover;
+    filter: blur(2px) brightness(0.85);
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 10, 25, 0.65); /* тёмно-синий фильтр */
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    body::before {
+        background: url('mobile.png') no-repeat center top fixed;
+        background-size: cover;
+    }
+}
+
+/* Логотип */
+.header__main img.round {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #1e90ff; /* ярко-синяя рамка */
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.7);
+}
+
+/* Заголовок */
+.header__title span {
+    background: linear-gradient(90deg, #00bfff, #1e90ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header__title {
+    font-size: 1.9rem;
+    margin: 8px 0 18px;
+}
+
+/* Контейнеры */
+.btn__info, .reklama {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    padding: 12px;
+    margin: 15px auto;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(30, 144, 255, 0.25);
+}
+
+.reklama-title {
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.reklama-title span {
+    font-size: 1.2rem;
+    color: #aad4ff; /* нежно-синий */
+}
+
+/* Кнопки соцсетей */
+.btn__info-link {
+    display: block;
+    margin: 10px auto;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #1e90ff, #000814); /* синий → чёрный */
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1.25rem;
+}
+
+.btn__info-link i {
+    margin-right: 8px;
+}
+
+.btn__info-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.6);
+}
+
+    </style>
+    
+    
+</head>
+<body>
+    <div class="header">
+        <div class="header__main">
+            <p>
+                <img src="logo.jpg" alt="" class="round">
+            </p>
+            <h1 class="header__title"><span>INOMARKA HAYDA</span></h1>
+        </div>
+
+        <div class="btn__info">
+            <h2 class="reklama-title"><span>🚘 Inomarka Reklama</span></h2>
+            <a href="auto_reklama.html" class="btn__info-link"><i class="fa fa-telegram"></i>Murojat qilish</a>
+
+            <h2 class="reklama-title"><span>🛠️ Servis Tuning Profi</span></h2>
+            <a href="https://www.instagram.com/tuning.profi/" class="btn__info-link"><i class="fa-brands fa-instagram"></i>tuning.profi</a>
+            <a href="tel:+998904444447" class="btn__info-link"><i class="fa-solid fa-phone"></i>+998904444447</a>
+
+            <h2 class="reklama-title"><span>🏠 Uy joy reklamasi</span></h2>
+            <a href="uy.html" class="btn__info-link"><i class="fa fa-telegram"></i>Murojat qilish</a>
+            <a href="https://www.instagram.com/inomarka.uylar/" class="btn__info-link"><i class="fa-brands fa-instagram"></i>inomarka.uylar</a>
+
+            <h2 class="reklama-title"><span>📢 Ijtimoiy tarmoqlarimizga a'zo bo'ling!</span></h2>
+            <a href="https://t.me/inomarkahayda" class="btn__info-link"><i class="fa fa-telegram"></i>Telegram</a>
+            <a href="https://www.youtube.com/@tuningprofi" class="btn__info-link"><i class="fa fa-youtube-play"></i>YouTube</a>
+        </div>
+
+        <div class="reklama">
+            <h2 class="reklama-title"><span>🧰 Biznes reklama</span></h2>
+            <a href="tel:+998990730007" class="btn__info-link"><i class="fa-solid fa-phone"></i>+998990730007</a>
+
+            <h2 class="reklama-title"><span>👤 Shaxsiy Instagram</span></h2>
+            <a href="https://www.instagram.com/nodirkhudja/" class="btn__info-link"><i class="fa-brands fa-instagram"></i>Nodirxo'ja Fayz</a>
+        </div>
+    </div>
+</body>
+</html>
